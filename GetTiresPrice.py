@@ -30,5 +30,5 @@ writer = csv.writer(csvFile)
 
 for x1 in dicTirePrice.items():
     writer.writerow(x1)
-    print(x1)
+
 csvFile.close()
