@@ -22,7 +22,7 @@ for i in range(1,10):
         Price = str.replace(name.find("td", {"class": "td3"}).find("strong").get_text(), "¥", "")
         dicTirePrice[Tire] = Price
 
-#print(dicTirePrice)
+print(dicTirePrice)
 
 #C:/Users/H620974/Desktop/TW/test.csv
 csvFile = open("C:/Users/H620974/Desktop/TW/test.csv", "w",newline='')
