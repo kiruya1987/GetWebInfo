@@ -17,8 +17,8 @@
       <file leaf-file-name="GetTiresPrice.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GetTiresPrice.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+            <state relative-caret-position="204">
+              <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -104,7 +104,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.GetTiresPrice">
-    <configuration name="GetTiresPrice" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="GetTiresPrice" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -121,11 +121,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.GetTiresPrice" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -159,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501213365376</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="delete print">
+      <created>1501213567723</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1501213567723</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -228,7 +230,8 @@
     <MESSAGE value="new" />
     <MESSAGE value="delete x1" />
     <MESSAGE value="add print" />
-    <option name="LAST_COMMIT_MESSAGE" value="add print" />
+    <MESSAGE value="delete print" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete print" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -263,8 +266,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GetTiresPrice.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="204">
+          <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>

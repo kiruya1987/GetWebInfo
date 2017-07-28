@@ -23,7 +23,7 @@ for i in range(1,10):
         dicTirePrice[Tire] = Price
 
 #print(dicTirePrice)
-
+print ("111")
 #C:/Users/H620974/Desktop/TW/test.csv
 csvFile = open("C:/Users/H620974/Desktop/TW/test.csv", "w",newline='')
 writer = csv.writer(csvFile)
