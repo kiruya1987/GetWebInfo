@@ -37,6 +37,14 @@ conn= MySQLdb.connect(
         )
 cur = conn.cursor()
 
+
+def IsNum(Num):
+    try:
+        int(Num)
+        return True
+    except:
+        return False
+
 try:
     URLText = open(UrlFile,'w')
     for i in range(1,143):
@@ -65,9 +73,20 @@ try:
 
         TyreType = bsobj.find(class_="properties").ul.find_all("li")[1].text.replace("产品规格：",'')
 
-        TyreSize = int(TyreType[0:3])
-        TyreR = int(TyreType[4:6])
-        TyreRim = int(TyreType[7:9])
+        if IsNum(TyreType[0:3]):
+            TyreSize = int(TyreType[0:3])
+        else:
+            TyreSize=0
+
+        if IsNum(TyreType[4:6]):
+            TyreR = int(TyreType[4:6])
+        else:
+            TyreR = 0
+
+        if IsNum(TyreType[7:9]):
+            TyreRim = int(TyreType[7:9])
+        else:
+            TyreRim=0
 
         for item in bsobj.find(class_="properties").ul.find_all("li"):
             if "轮胎花纹：" in item.text :
@@ -93,7 +112,6 @@ finally:
     conn.commit()
     conn.close()
     URLText.close()
-
 
 
 
