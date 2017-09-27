@@ -24,7 +24,7 @@ TyreType=''
 TyreCategory = ''
 Buyers = 0
 CreateTime =time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-i=0
+
 UrlFile='test.txt'
 
 conn= MySQLdb.connect(
@@ -59,7 +59,7 @@ try:
         for name in namelist:
             URLText.write(name.a['href'] + '\n')
 
-
+    i = 0
     for line in open(UrlFile):
         page = urlopen(line)
         html = page.read()
@@ -100,11 +100,13 @@ try:
             Buyers =int(bsobj.find(class_="person_shu")['data-quantity'])
 
         sqli = "INSERT INTO TyreData VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-        if TyreName != '' :
-            cur.execute(sqli, (TyreName, TyreBrand,TyrePrice, TyreRim,TyreSize,TyreR,TyreType,TyreCategory,Buyers,CreateTime))
 
         i=i+1
         print TyreName,i
+        if TyreName != '' and TyreName != None:
+            cur.execute(sqli, (TyreName, TyreBrand,TyrePrice, TyreRim,TyreSize,TyreR,TyreType,TyreCategory,Buyers,CreateTime))
+
+
         # print TyrePrice
 
         # break
