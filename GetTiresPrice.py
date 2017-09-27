@@ -47,7 +47,7 @@ def IsNum(Num):
 
 try:
     URLText = open(UrlFile,'w')
-    for i in range(1,143):
+    for i in range(1,2):
         page = urlopen('https://item.tuhu.cn/Tires/' + str(i) + '/f0-o6.html')
         html = page.read()
 
@@ -58,15 +58,18 @@ try:
 
         for name in namelist:
             URLText.write(name.a['href'] + '\n')
-
+    URLText.close()
     i = 0
     for line in open(UrlFile):
         page = urlopen(line)
         html = page.read()
         bsobj = BeautifulSoup(html, "html5lib")
 
-        TyreName = bsobj.find("h1").find(text=re.compile("/"))
+        TyreName = bsobj.find("h1").find(text=re.compile("R"))
 
+        # print TyreName
+
+        # break
         TyrePrice = float(bsobj.find(class_="price").strong.string.replace("¥",'').replace(",",''))
 
         TyreBrand = bsobj.find(class_="properties").ul.li.text.replace("轮胎品牌：",'')
@@ -102,20 +105,19 @@ try:
         sqli = "INSERT INTO TyreData VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
         i=i+1
-        print TyreName,i
+        print TyreName,i,line
         if TyreName != '' and TyreName != None:
             cur.execute(sqli, (TyreName, TyreBrand,TyrePrice, TyreRim,TyreSize,TyreR,TyreType,TyreCategory,Buyers,CreateTime))
 
-
+        conn.commit()
         # print TyrePrice
 
         # break
 
 finally:
     cur.close()
-    conn.commit()
     conn.close()
-    URLText.close()
+
 
 
 
