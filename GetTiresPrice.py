@@ -24,7 +24,7 @@ TyreType=''
 TyreCategory = ''
 Buyers = 0
 CreateTime =time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-
+i=0
 UrlFile='test.txt'
 
 conn= MySQLdb.connect(
@@ -91,7 +91,7 @@ try:
         for item in bsobj.find(class_="properties").ul.find_all("li"):
             if "轮胎花纹：" in item.text :
                 TyreCategory = item.text.replace("轮胎花纹：",'')
-        print TyreCategory
+
 
 
         if bsobj.find(class_="person_shu")['data-quantity'] == '':
@@ -100,9 +100,11 @@ try:
             Buyers =int(bsobj.find(class_="person_shu")['data-quantity'])
 
         sqli = "INSERT INTO TyreData VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-        cur.execute(sqli, (TyreName, TyreBrand,TyrePrice, TyreRim,TyreSize,TyreR,TyreType,TyreCategory,Buyers,CreateTime))
+        if TyreName != '' :
+            cur.execute(sqli, (TyreName, TyreBrand,TyrePrice, TyreRim,TyreSize,TyreR,TyreType,TyreCategory,Buyers,CreateTime))
 
-
+        i=i+1
+        print TyreName,i
         # print TyrePrice
 
         # break
