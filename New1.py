@@ -1,15 +1,17 @@
-class a(object):
-    pass
+import MySQLdb
 
-s=a()
-s.name = 'SS'
-s.type = int
+conn= MySQLdb.connect(
+        host='42.159.249.108',
+        port = 53306,
+        user='root',
+        passwd='root',
+        db ='BigDataSample',
+        )
+cur = conn.cursor()
 
-try:
-    print s.type('111')
+sqli = "INSERT INTO TyreData VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+cur.execute(sqli, ('a','b',1.1, 10,70,15,'aaa','bbb',0))
+cur.close()
 
-except:
-    print s.name,s.type
-
-finally:
-    print "END"
+conn.commit()
+conn.close()
