@@ -7,10 +7,11 @@ import csv
 import io
 import re
 import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
 import MySQLdb
 import time
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 TyreName=''
 TyreBrand=''
@@ -38,7 +39,7 @@ cur = conn.cursor()
 
 try:
     URLText = open(UrlFile,'w')
-    for i in range(141,143):
+    for i in range(1,143):
         page = urlopen('https://item.tuhu.cn/Tires/' + str(i) + '/f0-o6.html')
         html = page.read()
 
@@ -49,7 +50,7 @@ try:
 
         for name in namelist:
             URLText.write(name.a['href'] + '\n')
-        URLText.close()
+
 
     for line in open(UrlFile):
         page = urlopen(line)
@@ -91,6 +92,7 @@ finally:
     cur.close()
     conn.commit()
     conn.close()
+    URLText.close()
 
 
 
