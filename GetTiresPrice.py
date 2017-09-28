@@ -24,7 +24,8 @@ TyreSpeed = ''
 TyreType=''
 TyreCategory = ''
 Buyers = 0
-CreateTime =time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+# CreateTime =time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+CreateTime =time.strftime("%Y-%m-%d", time.localtime())
 
 UrlFile='test.txt'
 
