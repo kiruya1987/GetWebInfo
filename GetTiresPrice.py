@@ -103,7 +103,29 @@ try:
         else :
             Buyers =int(bsobj.find(class_="person_shu")['data-quantity'])
 
-        sqli = "INSERT INTO TyreData VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+        # sqli = "INSERT INTO TyreData VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+
+        sqli = """INSERT INTO TyreData
+                            (TyreName,
+                            TyreBrand,
+                            TyrePrice,
+                            TyreRim,
+                            TyreSize,
+                            TyreR,
+                            TyreType,
+                            TyreCategory,
+                            Buyers,
+                            CreateTime)
+                            VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                            ON DUPLICATE KEY UPDATE
+                            TyreBrand=values(TyreBrand),
+                            TyrePrice=values(TyrePrice),
+                            TyreRim=values(TyreRim),
+                            TyreSize=values(TyreSize),
+                            TyreR=values(TyreR),
+                            TyreType=values(TyreType),
+                            TyreCategory=values(TyreCategory),
+                            Buyers=values(Buyers);"""
 
         i=i+1
         print TyreName,i,line
