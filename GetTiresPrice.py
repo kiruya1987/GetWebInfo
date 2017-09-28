@@ -1,4 +1,5 @@
 #coding:utf-8
+#!/usr/bin/python2.7
 
 from bs4 import BeautifulSoup
 from urllib import urlopen
@@ -47,7 +48,7 @@ def IsNum(Num):
 
 try:
     URLText = open(UrlFile,'w')
-    for i in range(1,2):
+    for i in range(1,143):
         page = urlopen('https://item.tuhu.cn/Tires/' + str(i) + '/f0-o6.html')
         html = page.read()
 
